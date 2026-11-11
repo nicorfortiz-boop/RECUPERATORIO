@@ -1,0 +1,40 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\WINDOWS\System32> $usuarios = Get-LocalUser
+PS C:\WINDOWS\System32> $limite = [int](Read-Host "Ingrese un numero limite")
+Ingrese un numero limite: 100
+PS C:\WINDOWS\System32> $cantidadUsuarios = $usuarios.Count
+PS C:\WINDOWS\System32> $cantidadUsuarios
+7
+PS C:\WINDOWS\System32> $condicion = ($cantidadUsuarios -gt $limite) -and ($cantidadUsuarios -lt 10)
+PS C:\WINDOWS\System32> $condicion
+False
+PS C:\WINDOWS\System32> if ($condicion)
+>> {
+>> Write-Host "La condicion se cumple."
+>> }
+PS C:\WINDOWS\System32> else
+else : El término 'else' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable.
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ else
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\WINDOWS\System32> if ($condicion)
+>> {
+>>     Write-Host "La condicion se cumple."
+>> }
+PS C:\WINDOWS\System32> Write-Host "La condicion NO se cumple."
+La condicion NO se cumple.
+PS C:\WINDOWS\System32> $PSVersionTable.PSVersion
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      26100  9711
+
+
+PS C:\WINDOWS\System32>
